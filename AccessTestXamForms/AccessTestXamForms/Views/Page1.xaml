@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AccessTestXamForms.Views.Page1">
+    <ContentPage.Content>
+        <ScrollView Margin="20">
+            <StackLayout>
+                <Label Text="Accessibility Demo" HorizontalOptions="Center" FontAttributes="Bold" AutomationProperties.IsInAccessibleTree="true" AutomationProperties.Name="Title Label" />
+                <Label AutomationProperties.IsInAccessibleTree="true" AutomationProperties.Name="Instructions Label">
+                    <Label.Text>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Use two fingers to swipe up or down the screen to read each element on the page." />
+                            <On Platform="Android" Value="Quickly swipe right or left to navigate through elements on the page in sequence." />
+                            <On Platform="UWP" Value="Use three fingers to swipe up the screen to read each element on the page." />
+                        </OnPlatform>
+                    </Label.Text>
+                </Label>
+                <Switch AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Switch Three"></Switch>
+                <Button Text="Toggle ActivityIndicator"  AutomationProperties.IsInAccessibleTree="true" AutomationProperties.HelpText="Tap to toggle the activity indicator" />
+                <ActivityIndicator x:Name="activityIndicator" AutomationProperties.IsInAccessibleTree="true" AutomationProperties.Name="Progress indicator" />
+                <!--<StackLayout Orientation="Horizontal">-->
+                <Label x:Name="label" Text="Enter your name: " />
+                <Entry Placeholder="Enter name here" AutomationProperties.IsInAccessibleTree="true" AutomationProperties.LabeledBy="{x:Reference label}" />
+                <!--</StackLayout>-->
+                <Label Text="Tap image to hear the alert box." AutomationProperties.IsInAccessibleTree="true" AutomationProperties.Name="Image Label" />
+
+                <!-- Extra content -->
+
+                <Label AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Label Zero" AutomationProperties.HelpText="Label Zero help">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Is the worker claiming the " />
+                            <Span  Text="tax-free threshold">
+                            </Span>
+                            <Span Text="?" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Switch AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Switch Zero" AutomationProperties.HelpText="Switch zero help"></Switch>
+
+                <Switch AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Switch one" AutomationProperties.HelpText="Switch one help"></Switch>
+                <Label AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="TFN" AutomationProperties.HelpText="TFN help">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Has the worker provided a TFN " />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Switch AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Switch Two" AutomationProperties.HelpText="Switch one help"></Switch>
+                <Label AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Label Broken" AutomationProperties.HelpText="Label Broken one help">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Is the worker claiming the " />
+                            <Span  Text="tax-free threshold">
+                            </Span>
+                            <Span Text="?" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Switch AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Switch Three"></Switch>
+                <Picker Title="Select a monkey" AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Picker"
+        TitleColor="Red">
+                    <Picker.Items>
+                        <x:String>Baboon</x:String>
+                        <x:String>Capuchin Monkey</x:String>
+                        <x:String>Blue Monkey</x:String>
+                        <x:String>Squirrel Monkey</x:String>
+                        <x:String>Golden Lion Tamarin</x:String>
+                        <x:String>Howler Monkey</x:String>
+                        <x:String>Japanese Macaque</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

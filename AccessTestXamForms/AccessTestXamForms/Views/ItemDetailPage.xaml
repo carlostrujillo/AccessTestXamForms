@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AccessTestXamForms.Views.ItemDetailPage"
+             Title="{Binding Title}">
+
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" BackgroundColor="Aquamarine">
+            <StackLayout Spacing="20" Padding="15" VerticalOptions="FillAndExpand" Orientation="Vertical" BackgroundColor="Yellow">
+
+                <Label AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="One"   Text="Text:" FontSize="Medium" />
+                <Label AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Two" Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" />
+                <Label AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Three" Text="Description:" FontSize="Medium" />
+                <Label AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Four" Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" />
+
+                <Frame>
+                    <Label AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Calculator"
+                       FontAttributes="Bold"
+                       Text="This calculator applies to payments made in the 2020-21 financial year." />
+                </Frame>
+
+                <Label AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Label Zero">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Is the worker claiming the " />
+                            <Span  Text="tax-free threshold">
+                            </Span>
+                            <Span Text="?" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Switch AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Switch Zero" ></Switch>
+
+                <Switch AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Switch one" AutomationProperties.HelpText="Switch one help"></Switch>
+                <Label AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="TFN">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Has the worker provided a TFN, " />
+                            <Span Text="or " FontAttributes="Bold" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Switch AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Switch Two" AutomationProperties.HelpText="Switch one help"></Switch>
+                <Label AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Label Broken">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Is the worker claiming the " />
+                            <Span  Text="tax-free threshold">
+                            </Span>
+                            <Span Text="?" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Switch AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Switch Three"></Switch>
+                <Picker Title="Select a monkey" AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Picker"
+        TitleColor="Red">
+                    <Picker.Items>
+                        <x:String>Baboon</x:String>
+                        <x:String>Capuchin Monkey</x:String>
+                        <x:String>Blue Monkey</x:String>
+                        <x:String>Squirrel Monkey</x:String>
+                        <x:String>Golden Lion Tamarin</x:String>
+                        <x:String>Howler Monkey</x:String>
+                        <x:String>Japanese Macaque</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Button Text="Go to page"  AutomationProperties.IsInAccessibleTree="True" AutomationProperties.Name="Button" Clicked="Button_Clicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
